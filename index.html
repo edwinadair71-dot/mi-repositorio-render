@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estantería · registro de lecturas</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Estantería</h1>
+  <p class="lead">Lleva el registro de lo que lees. Cada lomo crece con las páginas del libro y se llena con tu avance.</p>
+
+  <form id="add-form" class="add" novalidate>
+    <label>Título<input name="title" required autocomplete="off"></label>
+    <label>Autor<input name="author" autocomplete="off"></label>
+    <label>Páginas<input name="pages" type="number" min="1" inputmode="numeric" required></label>
+    <button type="submit">Agregar libro</button>
+    <p id="form-error" class="error" role="alert"></p>
+  </form>
+
+  <div class="toolbar">
+    <div id="filters" role="group" aria-label="Filtrar por estado"></div>
+    <input id="search" type="search" placeholder="Buscar por título o autor" aria-label="Buscar">
+  </div>
+
+  <section id="shelf" class="shelf" aria-label="Estantería"></section>
+  <section id="detail" class="detail" aria-live="polite"></section>
+  <p id="stats" class="stats"></p>
+</main>
+<script src="js/storage.js"></script>
+<script src="js/model.js"></script>
+<script src="js/view.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
